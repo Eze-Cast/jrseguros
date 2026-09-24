@@ -1,5 +1,25 @@
 # Publicar en GitHub Pages y conectar tu dominio
 
+## Configuración de JR Seguros
+
+- Repositorio: [Eze-Cast/jrseguros](https://github.com/Eze-Cast/jrseguros).
+- Página: [https://jrseguros.com.mx/](https://jrseguros.com.mx/).
+- GitHub Pages publica desde `main`, carpeta `/(root)`, con **Enforce HTTPS** activado.
+- Dominio administrado en Hostinger; los nameservers se conservan en Hostinger.
+- `CNAME` contiene `jrseguros.com.mx`. Conserva este archivo al actualizar la página.
+
+Registros DNS configurados en Hostinger el 24 de septiembre de 2026:
+
+| Tipo | Nombre | Valor | TTL |
+| --- | --- | --- | --- |
+| A | @ | 185.199.108.153 | 300 |
+| A | @ | 185.199.109.153 | 300 |
+| A | @ | 185.199.110.153 | 300 |
+| A | @ | 185.199.111.153 | 300 |
+| CNAME | www | eze-cast.github.io | 300 |
+
+La dirección con `www` debe redirigir al dominio principal cuando GitHub termine de provisionar el certificado para ambas direcciones. Los cambios enviados a `main` vuelven a publicar el sitio automáticamente.
+
 ## 1. Qué subir
 
 Crea un repositorio para JR Seguros. En **Add file → Upload files**, sube estos archivos y carpetas conservando exactamente su estructura:
@@ -28,14 +48,14 @@ La web utiliza rutas relativas, por lo que funciona también con la dirección `
 
 Consulta la [guía oficial sobre la fuente de publicación](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
-## 3. Cuando compres el dominio
+## 3. Configurar o cambiar el dominio
 
 1. En **Settings → Pages → Custom domain**, escribe tu dominio y guarda. Configura primero el dominio en GitHub y después los registros DNS en el proveedor.
 2. En la cuenta donde compraste el dominio, configura los registros que indica la guía oficial de GitHub para tu caso: dominio raíz o subdominio `www`.
 3. Espera a que la comprobación DNS y el certificado estén listos. Activa **Enforce HTTPS** cuando esté disponible.
 4. Visita el dominio desde móvil y computadora. Prueba los enlaces a WhatsApp y al cotizador.
 
-No hay un `CNAME` de ejemplo en este proyecto: GitHub lo creará con el dominio real al guardar la configuración desde una rama. No borres ese archivo en las siguientes actualizaciones.
+El archivo `CNAME` ya existe y contiene el dominio real. GitHub lo actualiza al guardar otro dominio desde la configuración de Pages. No borres ese archivo en las siguientes actualizaciones.
 
 [Documentación oficial para configurar el dominio y los DNS](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
 
