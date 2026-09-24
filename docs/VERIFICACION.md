@@ -1,8 +1,16 @@
 # Verificación de la entrega
 
+## Cotizador en otra pestaña y aviso de 3 segundos · 24 de septiembre de 2026
+
+- Todos los accesos generales, tarjetas, publicaciones y chatbot abren `cotizar.html` en otra pestaña con `noopener noreferrer`. Empresarial conserva WhatsApp.
+- El aviso conserva el correo `tuseguro@aarco.com.mx`. Tras 3000 ms carga el cotizador únicamente en la pestaña nueva.
+- Prueba local con Microsoft Edge: navegación medida a los 3056 ms, página original, posición de lectura y conversación conservadas. Cancelar cierra la pestaña del aviso; Escape funciona también desde una publicación ampliada, que permanece abierta en la página original.
+- Aviso revisado a 320 y 390 píxeles de ancho, sin desbordamiento horizontal. Sin errores JavaScript. El destino externo se interceptó durante las pruebas, sin enviar cotizaciones reales.
+- Verificador del asistente aprobado: 51 entradas, 74 preguntas y seis conversaciones. Las verificaciones inferiores corresponden a versiones anteriores del aviso.
+
 ## Cotizador y aviso de correo · 24 de septiembre de 2026
 
-Estado vigente para los enlaces de cotización; las secciones siguientes registran verificaciones anteriores.
+Registro anterior del aviso de 6 segundos y navegación en la misma pestaña.
 
 - Doce enlaces de cotización iniciales verificados: cuatro generales, cuatro tarjetas y cuatro publicaciones. Auto, vida, gastos médicos mayores y hogar apuntan a `https://www.cotizamatico.com.mx/landing/ramon.garciag`; empresarial conserva WhatsApp.
 - Los cinco flyers ampliados y los cinco productos en el chatbot dirigen al canal correspondiente. Cotización, requisitos y seguimiento de precio comprobados por producto.

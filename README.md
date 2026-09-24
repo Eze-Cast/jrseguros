@@ -16,4 +16,4 @@ Los cambios enviados a `main` se publican automáticamente. Conserva `CNAME`, `.
 
 ## Cotizaciones
 
-Auto, vida, gastos médicos mayores y hogar usan el cotizador de Ramón García. Antes de salir del sitio aparece el aviso sobre el correo `tuseguro@aarco.com.mx` durante 6 segundos. Empresarial y los accesos de asesoría conservan WhatsApp.
+Auto, vida, gastos médicos mayores y hogar usan el cotizador de Ramón García. Al abrir la pestaña nueva aparece el aviso sobre el correo `tuseguro@aarco.com.mx` durante 3 segundos. Empresarial y los accesos de asesoría conservan WhatsApp.

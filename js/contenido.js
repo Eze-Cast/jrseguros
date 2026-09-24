@@ -193,7 +193,7 @@ window.JR_CONTENIDO = {
         "tarifa",
       ],
       respuesta:
-        "Puedes cotizar auto, vida, gastos médicos mayores y hogar en nuestro cotizador en línea. Antes de abrirlo verás un aviso durante 6 segundos: si completas la cotización, recibirás un correo de tuseguro@aarco.com.mx. Para seguro empresarial, contacta a Ramón por WhatsApp. El precio depende del producto, tus datos y las coberturas elegidas; el asistente no calcula precios.",
+        "Puedes cotizar auto, vida, gastos médicos mayores y hogar en nuestro cotizador en línea. Se abrirá otra pestaña con un aviso durante 3 segundos antes del cotizador: si completas la cotización, recibirás un correo de tuseguro@aarco.com.mx. Para seguro empresarial, contacta a Ramón por WhatsApp. El precio depende del producto, tus datos y las coberturas elegidas; el asistente no calcula precios.",
       accion: "cotizar",
       visible: true,
     },

@@ -106,9 +106,9 @@ Los enlaces en `index.html` sirven como respaldo cuando JavaScript está desacti
 
 ## Cambiar el cotizador
 
-Cambia `contacto.cotizador` en `js/contenido.js`. Actualiza también los enlaces de respaldo del HTML. El cotizador se abre en la misma pestaña después de un aviso de 6 segundos sobre el correo tuseguro@aarco.com.mx. El aviso se puede cancelar con el botón, Escape o un clic fuera del cuadro. El precio y la cotización se gestionan en ese servicio externo.
+Cambia `contacto.cotizador` en `js/contenido.js`. Actualiza también los enlaces de respaldo del HTML. El cotizador se abre en otra pestaña después de un aviso de 3 segundos sobre el correo tuseguro@aarco.com.mx. El aviso aparece en una pestaña nueva, espera 3 segundos y carga ahí el cotizador. La página original conserva el chat y la posición de lectura. Se puede cancelar con el botón o Escape. El precio y la cotización se gestionan en ese servicio externo.
 
-Los botones generales de cotización y los accesos de auto, vida, gastos médicos mayores y hogar usan ese enlace, también desde publicaciones ampliadas y el chatbot. Empresarial permanece en WhatsApp. Los botones de asesoría, contacto y seguimiento conservan WhatsApp. El texto del aviso está en index.html, sus estilos en css/cotizador.css y la espera de 6000 milisegundos en js/app.js.
+Los botones generales de cotización y los accesos de auto, vida, gastos médicos mayores y hogar usan ese enlace, también desde publicaciones ampliadas y el chatbot. Empresarial permanece en WhatsApp. Los botones de asesoría, contacto y seguimiento conservan WhatsApp. El texto del aviso está en cotizar.html, sus estilos en css/cotizador.css y la espera de 3000 milisegundos en js/cotizador.js.
 
 ## Alimentar el chatbot
 

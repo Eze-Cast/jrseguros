@@ -41,7 +41,7 @@ Si tienes Node.js, también puedes ejecutar `node tools/preview.mjs` desde la ca
 La galería presenta auto, vida, gastos médicos mayores, hogar y empresarial en ese orden. Tiene cinco carruseles automáticos con dos flyers cada uno y un carrusel de temporada manual con cuatro espacios pendientes. Los nuevos flyers muestran escenas masculinas acordes a cada seguro con la marca JR. La barra «NUESTROS ALIADOS» incluye diez compañías. Consulta `docs/EDITAR-CONTENIDO.md` para editar contenido y movimiento, y `docs/PROMPTS-FLYERS.md` para los archivos y prompts de las imágenes nuevas.
 
 - Cotizador: https://www.cotizamatico.com.mx/landing/ramon.garciag
-- Auto, vida, gastos médicos mayores y hogar usan este enlace en tarjetas, publicaciones y chatbot. Antes de salir, un aviso informa del correo **tuseguro@aarco.com.mx** y espera **6 segundos**; después abre el cotizador en la misma pestaña. Se puede cancelar el aviso.
+- Auto, vida, gastos médicos mayores y hogar usan este enlace en tarjetas, publicaciones y chatbot. En una pestaña nueva, un aviso informa del correo **tuseguro@aarco.com.mx** y espera **3 segundos**; después carga ahí el cotizador. La página original permanece abierta. Se puede cancelar el aviso.
 - El seguro empresarial continúa por WhatsApp.
 - WhatsApp: **+52 477 490 9866**, confirmado por el propietario como número definitivo.
 - Los botones preparan un mensaje; el visitante confirma el envío dentro de WhatsApp.

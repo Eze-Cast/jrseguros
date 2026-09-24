@@ -26,6 +26,7 @@ Crea un repositorio para JR Seguros. En **Add file → Upload files**, sube esto
 
 ```text
 index.html
+cotizar.html
 .nojekyll
 css/
 js/

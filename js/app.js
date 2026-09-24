@@ -29,8 +29,8 @@
   const productLink = (id, title) =>
     onlineProducts.has(id) ? data.contacto.cotizador : interestLink(title);
   const externalLink = (a, url) => {
-    a.href = url;
-    a.target = url === data.contacto.cotizador ? "_self" : "_blank";
+    a.href = url === data.contacto.cotizador ? "cotizar.html" : url;
+    a.target = "_blank";
     a.rel = "noopener noreferrer";
     a.toggleAttribute("data-cotizar", url === data.contacto.cotizador);
   };
@@ -76,12 +76,6 @@
   });
   const publicationDialog = $("#publication-dialog");
   const dialogFocus = new WeakMap();
-  let quoteTimer;
-  let quoteCountdown;
-  function stopQuoteTimer() {
-    clearTimeout(quoteTimer);
-    clearInterval(quoteCountdown);
-  }
   function openDialog(dialog) {
     dialogFocus.set(dialog, document.activeElement);
     dialog.classList.remove("is-closing");
@@ -91,7 +85,6 @@
   }
   async function closeDialog(dialog) {
     if (dialog.classList.contains("is-closing")) return;
-    if (dialog.id === "quote-dialog") stopQuoteTimer();
     dialog.classList.add("is-closing");
     await animatePanel(dialog, false);
     dialog.close();
@@ -117,36 +110,9 @@
         closeDialog(dialog);
     });
     dialog.addEventListener("close", () => {
-      if (dialog.id === "quote-dialog") stopQuoteTimer();
       document.body.classList.toggle("modal-open", Boolean($("dialog[open]")));
       dialogFocus.get(dialog)?.focus({ preventScroll: true });
     });
-  });
-  const quoteDialog = $("#quote-dialog");
-  function showQuoteNotice(event) {
-    const link = event.target.closest("a[data-cotizar]");
-    if (!link || (event.type === "auxclick" && event.button !== 1)) return;
-    event.preventDefault();
-    if (quoteDialog.open) return;
-    stopQuoteTimer();
-    const seconds = $("#quote-seconds");
-    seconds.textContent = "6";
-    openDialog(quoteDialog);
-    const started = performance.now();
-    quoteCountdown = setInterval(() => {
-      seconds.textContent = String(Math.max(0, 6 - Math.floor((performance.now() - started) / 1000)));
-    }, 200);
-    quoteTimer = setTimeout(() => {
-      stopQuoteTimer();
-      quoteDialog.close();
-      window.location.assign(data.contacto.cotizador);
-    }, 6000);
-  }
-  document.addEventListener("click", showQuoteNotice);
-  document.addEventListener("auxclick", showQuoteNotice);
-  window.addEventListener("pagehide", () => {
-    stopQuoteTimer();
-    if (quoteDialog.open) quoteDialog.close();
   });
   $("#privacy-open").addEventListener("click", () =>
     openDialog($("#privacy-dialog")),
