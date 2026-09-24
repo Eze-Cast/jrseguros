@@ -56,4 +56,4 @@ Para conectar más adelante un modelo de IA, será necesario un servicio externo
 
 El pulido mantiene los cinco seguros y todos los enlaces. Las imágenes servidas pesan en conjunto alrededor de un 86 % menos; los originales permanecen disponibles. Los flyers de estilo minimalista aparecen primero y la segunda imagen conserva el material anterior. Las publicaciones reservan espacio para el título más largo, y el chat mantiene accesible su campo de escritura en pantallas pequeñas. Consulta `docs/VERIFICACION.md` para las comprobaciones.
 
-El proyecto está guardado localmente. La publicación en GitHub y la conexión del dominio se harán cuando tengas el repositorio y el dominio. No se creó un archivo `CNAME` con un dominio inventado.
+El proyecto está conectado al repositorio [Eze-Cast/jrseguros](https://github.com/Eze-Cast/jrseguros). GitHub Pages está configurado para publicar desde `main` y la carpeta raíz. El dominio configurado es `jrseguros.com.mx`, guardado en `CNAME`; conserva ese archivo en las siguientes actualizaciones. La disponibilidad del dominio y de HTTPS depende de completar la conexión DNS en Hostinger y la emisión del certificado de GitHub.
