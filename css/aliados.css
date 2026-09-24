@@ -1,0 +1,180 @@
+/* Movimiento continuo con una sola lista accesible sin controles de pausa. */
+.allies-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 3vw, 52px);
+  min-height: 88px;
+  padding-block: 14px;
+}
+.allies-heading {
+  flex: 0 0 auto;
+  margin: 0;
+  font-size: 0.67rem;
+  font-weight: 600;
+  letter-spacing: 0.17em;
+  color: #536b7a;
+}
+.allies-window {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 24px,
+    #000 calc(100% - 24px),
+    transparent
+  );
+}
+.allies-track {
+  display: flex;
+  width: max-content;
+}
+.allies-track.is-ready {
+  animation: allies-drift 40s linear infinite;
+  animation-play-state: running;
+}
+.allies-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.allies-list li {
+  flex: 0 0 174px;
+  width: 174px;
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  padding-inline: 20px;
+}
+.ally-name {
+  white-space: nowrap;
+  line-height: 1;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+}
+.ally-name small {
+  display: block;
+  font:
+    500 0.48rem "DM Sans",
+    sans-serif;
+  text-align: center;
+  letter-spacing: 0.2em;
+  margin-top: 5px;
+}
+.ally-afirme {
+  color: #16833b;
+  letter-spacing: -0.06em;
+}
+.ally-sura {
+  color: #0033a0;
+  font-weight: 500;
+  font-size: 1.65rem;
+}
+.ally-chubb {
+  color: #171717;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  font-size: 1.2rem;
+}
+.ally-mapfre {
+  color: #d3212a;
+  letter-spacing: -0.035em;
+  font-size: 1.3rem;
+}
+.ally-banorte {
+  color: #cf173c;
+  letter-spacing: 0.015em;
+  font-size: 1.05rem;
+}
+.ally-hdi {
+  color: #176939;
+  font-size: 1.85rem;
+  font-weight: 800;
+}
+.ally-hdi small {
+  color: #5b6670;
+}
+.ally-ana {
+  color: #c92330;
+  font-style: italic;
+  font-size: 1.65rem;
+}
+.ally-axa {
+  color: #00008f;
+  font-family: Georgia, serif;
+  font-size: 1.65rem;
+}
+.ally-qualitas {
+  color: #86247b;
+  font-family: Georgia, serif;
+  font-size: 1.65rem;
+  letter-spacing: -0.035em;
+}
+.ally-zurich {
+  color: #003b71;
+  font-family: Georgia, serif;
+  font-size: 1.65rem;
+  letter-spacing: -0.035em;
+}
+@keyframes allies-drift {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 600px) {
+  .allies-row {
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    padding-block: 14px;
+  }
+  .allies-heading {
+    flex-basis: 100%;
+    font-size: 0.63rem;
+  }
+  .allies-window {
+    order: 3;
+    flex-basis: 100%;
+  }
+  .allies-list li {
+    flex-basis: 145px;
+    width: 145px;
+  }
+  .allies-track.is-ready {
+    animation-duration: 36s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .allies-window {
+    overflow: visible;
+    mask-image: none;
+  }
+  .allies-track,
+  .allies-track.is-ready {
+    width: 100%;
+    animation: none;
+    transform: none;
+  }
+  .allies-list {
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 15px 0;
+  }
+  .allies-list li {
+    flex: 1 0 140px;
+  }
+  .allies-list[aria-hidden="true"] {
+    display: none;
+  }
+  .allies-row {
+    flex-wrap: wrap;
+  }
+  .allies-window {
+    flex-basis: 100%;
+  }
+
+}

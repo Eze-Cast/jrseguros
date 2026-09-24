@@ -1,0 +1,74 @@
+.quote-dialog {
+  width: min(500px, calc(100% - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 24px 90px #0005;
+  overflow: auto;
+}
+.quote-dialog::backdrop {
+  background: #031322cf;
+  backdrop-filter: blur(8px);
+}
+.quote-content {
+  padding: clamp(22px, 5vw, 38px);
+  text-align: center;
+}
+.quote-icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #e9f6fa;
+  color: #0085a7;
+}
+.quote-icon svg { width: 28px; height: 28px; }
+.quote-content h2 {
+  margin: 10px 0 18px;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -.04em;
+}
+#quote-description { color: var(--muted); }
+.quote-email {
+  display: block;
+  margin: 12px 0;
+  color: var(--ink);
+  font-size: 1.1em;
+  overflow-wrap: anywhere;
+}
+.quote-countdown {
+  margin-top: 24px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #edf7fa;
+  font-size: .9rem;
+}
+.quote-countdown strong { white-space: nowrap; }
+.quote-cancel {
+  margin-top: 16px;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  color: var(--ink);
+  font-size: .85rem;
+}
+.quote-cancel:hover { background: #f1f6f9; }
+.quote-cancel:focus-visible { outline: 2px solid #0085a7; outline-offset: 3px; }
+@media (max-height: 650px) {
+  .quote-content { padding: 20px; }
+  .quote-icon { display: none; }
+  .quote-content h2 { font-size: 1.4rem; margin: 8px 0 12px; }
+  #quote-description { font-size: .9rem; line-height: 1.55; }
+  .quote-email { margin: 10px 0; }
+  .quote-countdown { margin-top: 16px; padding: 10px; }
+  .quote-cancel { margin-top: 12px; }
+}

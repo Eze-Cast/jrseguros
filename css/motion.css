@@ -1,0 +1,280 @@
+/* Movimiento discreto, sin desplazar artificialmente el scroll del usuario. */
+:root {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+.header {
+  transition:
+    box-shadow 0.4s,
+    background-color 0.4s;
+}
+.header.scrolled {
+  background-color: #081a2df5;
+  box-shadow: 0 4px 18px #04132612;
+}
+.button,
+.intro-whatsapp,
+.icon-button,
+.floating-wa,
+.chat-launcher,
+.chat-suggestions button,
+.chat-human,
+.footer-links a,
+.footer-links button {
+  transition:
+    color 0.25s,
+    background-color 0.25s,
+    border-color 0.25s,
+    box-shadow 0.3s,
+    transform 0.35s var(--motion-ease);
+}
+.intro-whatsapp:hover {
+  background: #ffffff08;
+  border-color: #91aebf;
+  transform: translateY(-2px);
+}
+.button:active,
+.intro-whatsapp:active,
+.chat-launcher:active,
+.floating-wa:active {
+  transform: scale(0.98);
+}
+.button span,
+.nav-quote span,
+.text-link span,
+.chat-human span,
+.zoom-indicator {
+  transition: transform 0.4s var(--motion-ease);
+}
+.button:hover span,
+.nav-quote:hover span,
+.text-link:hover span,
+.chat-human:hover span {
+  transform: translate(2px, -2px);
+}
+.publication-image-button:hover .zoom-indicator {
+  transform: scale(1.08);
+}
+.publication-info > a,
+.text-link,
+.header nav > a:not(.button) {
+  transition:
+    color 0.25s,
+    border-color 0.25s,
+    background-color 0.25s;
+}
+.publication-info > a:hover {
+  color: #087b9b;
+  border-color: #087b9b;
+}
+.product-card {
+  transition:
+    transform 0.5s var(--motion-ease),
+    box-shadow 0.5s,
+    border-color 0.4s;
+}
+.product-top svg {
+  transition: transform 0.5s var(--motion-ease);
+}
+.product-card:hover .product-top svg {
+  transform: translateY(-3px);
+}
+.faq-list details {
+  transition: border-color 0.35s;
+}
+.faq-list details[open] {
+  border-color: #8ec7d7;
+}
+.faq-list summary {
+  transition: color 0.25s;
+}
+.faq-list summary:hover,
+.faq-list details[open] summary {
+  color: #127991;
+}
+.faq-list summary:after {
+  transition: transform 0.35s var(--motion-ease);
+}
+.faq-list details[open] summary:after {
+  content: "+";
+  transform: rotate(45deg);
+}
+.chat-panel {
+  animation: none;
+}
+.chat-message {
+  animation: message-arrive 0.35s var(--motion-ease) both;
+}
+.chat-panel form {
+  transition:
+    border-color 0.25s,
+    box-shadow 0.25s;
+}
+.chat-panel form:focus-within {
+  border-color: #2995b3;
+  box-shadow: 0 0 0 3px #0f9cc010;
+}
+.chat-panel input:focus-visible {
+  outline: none;
+}
+.motion-ready .reveal {
+  transition-duration: 0.85s;
+  transition-timing-function: var(--motion-ease);
+  transition-delay: var(--reveal-delay, 0ms);
+  transform: translateY(18px);
+}
+.motion-ready .reveal.visible {
+  transform: none;
+}
+.motion-ready .product-card.reveal.visible:hover {
+  transform: translateY(-4px);
+}
+.intro-copy > * {
+  animation: intro-arrive 0.95s var(--motion-ease) both;
+}
+.intro-copy > :nth-child(2) {
+  animation-delay: 0.08s;
+}
+.intro-copy > :nth-child(3) {
+  animation-delay: 0.16s;
+}
+.intro-copy > :nth-child(4) {
+  animation-delay: 0.24s;
+}
+.intro-copy > :nth-child(5) {
+  animation-delay: 0.3s;
+}
+.intro-background img {
+  animation: intro-photo 1.8s var(--motion-ease) both;
+}
+.intro-signature {
+  animation: intro-arrive 1s 0.4s var(--motion-ease) both;
+}
+/* Microinteracciones sin movimiento continuo ni cambios en el diseño. */
+.insurer-names > span {
+  transition: transform 0.4s var(--motion-ease);
+}
+.insurer-names > span:hover {
+  transform: translateY(-3px);
+}
+.header .brand img {
+  transition:
+    opacity 0.3s,
+    transform 0.4s var(--motion-ease);
+}
+.header .brand:hover img {
+  opacity: 0.85;
+  transform: scale(0.96);
+}
+.publication-info > a,
+.footer-links > a,
+.footer-links > button,
+.seasonal-info a {
+  transition:
+    color 0.25s,
+    border-color 0.25s,
+    opacity 0.25s;
+}
+.seasonal-info a:hover {
+  color: #168bab;
+}
+.chat-launcher:hover {
+  background: #12354e;
+  transform: translateY(-2px);
+}
+dialog[open]::backdrop {
+  animation: backdrop-arrive 0.3s ease both;
+}
+dialog.is-closing::backdrop {
+  animation: backdrop-leave 0.2s ease both;
+}
+@keyframes intro-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes intro-photo {
+  from {
+    transform: scale(1.045);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes message-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes backdrop-arrive {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes backdrop-leave {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@media (max-width: 850px) {
+  /* visibility retira los enlaces cerrados del teclado sin cortar la transición. */
+  .header nav,
+  .header nav.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .header nav {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-9px);
+    transition:
+      opacity 0.25s,
+      transform 0.3s var(--motion-ease),
+      visibility 0.3s;
+  }
+  .header nav.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .motion-ready .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .intro-whatsapp:hover,
+  .insurer-names > span:hover,
+  .header .brand:hover img,
+  .chat-launcher:hover,
+  .motion-ready .product-card.reveal.visible:hover,
+  .product-card:hover .product-top svg {
+    transform: none;
+  }
+}
