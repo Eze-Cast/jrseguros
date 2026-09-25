@@ -16,7 +16,6 @@ window.crearCarrusel = function ({
   let suppressClickUntil = 0;
   const autoplay =
     automatico &&
-    !temporada &&
     entries.filter((entry) => entry.imagen).length > 1;
   let timer = null;
   let inView = false;
@@ -83,7 +82,7 @@ window.crearCarrusel = function ({
           }
           select(nextIndex, false);
         },
-        Math.max(5000, intervalo),
+        Math.max(4000, intervalo),
       );
   }
 

@@ -150,17 +150,18 @@ window.JR_CONTENIDO = {
       visible: true,
     },
   ],
-  // Cuatro espacios para ofertas. Completa imagen con una ruta local cuando tengas el flyer.
-  // Una ruta vacía muestra "Próximamente" y no solicita ninguna imagen inexistente.
+  // Promociones y consejos. Actualiza los flyers al terminar su vigencia.
   ofertas: {
     visible: true,
     titulo: "Ofertas de temporada",
-    descripcion: "Un espacio para conocer nuestras próximas promociones.",
+    descripcion: "Promociones y consejos para proteger lo que más importa. Toca una imagen para verla completa.",
     imagenes: [
-      { imagen: "", alt: "", titulo: "", descripcion: "" },
-      { imagen: "", alt: "", titulo: "", descripcion: "" },
-      { imagen: "", alt: "", titulo: "", descripcion: "" },
-      { imagen: "", alt: "", titulo: "", descripcion: "" },
+      { imagen: "assets/ofertas/promociones-aseguradoras.webp", alt: "Promociones de septiembre por aseguradora, con logos de JR Seguros y AARCO", titulo: "Promociones por aseguradora", descripcion: "Válidas del 1 al 30 de septiembre de 2026. Aplican restricciones. Sujetas a cambios sin previo aviso." },
+      { imagen: "assets/ofertas/fiestas-patrias.webp", alt: "Promoción de fiestas patrias con hasta 40% de descuento", titulo: "Celebra con protección", descripcion: "Válida del 1 al 30 de septiembre de 2026. Aplican restricciones. Sujeta a cambios sin previo aviso." },
+      { imagen: "assets/ofertas/que-hacer-choque.webp", alt: "Cinco pasos si te chocan y la otra persona no tiene seguro", titulo: "¿Qué hacer si te chocan?", descripcion: "Consejos de AARCO para actuar después de un accidente." },
+      { imagen: "assets/ofertas/axa-flotillas.webp", alt: "Coberturas de AXA para flotillas", titulo: "Protege tu flotilla con AXA", descripcion: "Aplican restricciones. Consulta términos y condiciones con tu agente." },
+      { imagen: "assets/ofertas/sura-auto.webp", alt: "Protección para tu auto con SURA", titulo: "Un rayón duele. Un choque más.", descripcion: "Aplican restricciones. Consulta términos y condiciones con tu agente." },
+      { imagen: "assets/ofertas/sura-mercancia.webp", alt: "Protección de mercancía con SURA por cielo, tierra y mar", titulo: "Tu mercancía segura", descripcion: "Aplican restricciones. Consulta términos y condiciones con tu agente." },
     ],
   },
   // Esta misma base alimenta las preguntas visibles y el chatbot local.

@@ -29,7 +29,7 @@
   const productLink = (id, title) =>
     onlineProducts.has(id) ? data.contacto.cotizador : interestLink(title);
   const externalLink = (a, url) => {
-    a.href = url === data.contacto.cotizador ? "cotizar.html" : url;
+    a.href = url === data.contacto.cotizador ? "cotizar.html?v=aviso-3s-v2" : url;
     a.target = "_blank";
     a.rel = "noopener noreferrer";
     a.toggleAttribute("data-cotizar", url === data.contacto.cotizador);
@@ -211,6 +211,8 @@
       imagenes: entries,
       titulo: offers.titulo,
       temporada: true,
+      automatico: true,
+      intervalo: 4000,
       onOpen: (entry) => showPublication(entry, offers.titulo),
       onChange: (entry) => {
         info.replaceChildren();

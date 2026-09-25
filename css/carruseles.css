@@ -282,6 +282,33 @@
     align-items: flex-start;
   }
 }
+.seasonal-section[data-empty="false"] .seasonal-card {
+  max-width: 600px;
+  margin-inline: auto;
+}
+.seasonal-section[data-empty="false"] .carousel-slide {
+  aspect-ratio: 3 / 4;
+}
+.flyer-carousel-seasonal .carousel-controls {
+  justify-content: center;
+  gap: 4px;
+}
+.flyer-carousel-seasonal .carousel-arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-color: transparent;
+}
+.flyer-carousel-seasonal .carousel-pagination {
+  margin-inline: auto;
+}
+.flyer-carousel-seasonal .carousel-dot {
+  width: 26px;
+  height: 44px;
+}
+.flyer-carousel-seasonal .carousel-counter {
+  display: none;
+}
 @media (prefers-reduced-motion: reduce) {
   .carousel-track,
   .carousel-arrow,
