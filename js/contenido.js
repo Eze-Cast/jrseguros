@@ -150,19 +150,55 @@ window.JR_CONTENIDO = {
       visible: true,
     },
   ],
-  // Promociones y consejos. Actualiza los flyers al terminar su vigencia.
+  // Actualiza las promociones al terminar su vigencia.
   ofertas: {
-    visible: true,
-    titulo: "Ofertas de temporada",
-    descripcion: "Promociones y consejos para proteger lo que más importa. Toca una imagen para verla completa.",
-    imagenes: [
-      { imagen: "assets/ofertas/promociones-aseguradoras.webp", alt: "Promociones de septiembre por aseguradora, con logos de JR Seguros y AARCO", titulo: "Promociones por aseguradora", descripcion: "Válidas del 1 al 30 de septiembre de 2026. Aplican restricciones. Sujetas a cambios sin previo aviso." },
-      { imagen: "assets/ofertas/fiestas-patrias.webp", alt: "Promoción de fiestas patrias con hasta 40% de descuento", titulo: "Celebra con protección", descripcion: "Válida del 1 al 30 de septiembre de 2026. Aplican restricciones. Sujeta a cambios sin previo aviso." },
-      { imagen: "assets/ofertas/que-hacer-choque.webp", alt: "Cinco pasos si te chocan y la otra persona no tiene seguro", titulo: "¿Qué hacer si te chocan?", descripcion: "Consejos de AARCO para actuar después de un accidente." },
-      { imagen: "assets/ofertas/axa-flotillas.webp", alt: "Coberturas de AXA para flotillas", titulo: "Protege tu flotilla con AXA", descripcion: "Aplican restricciones. Consulta términos y condiciones con tu agente." },
-      { imagen: "assets/ofertas/sura-auto.webp", alt: "Protección para tu auto con SURA", titulo: "Un rayón duele. Un choque más.", descripcion: "Aplican restricciones. Consulta términos y condiciones con tu agente." },
-      { imagen: "assets/ofertas/sura-mercancia.webp", alt: "Protección de mercancía con SURA por cielo, tierra y mar", titulo: "Tu mercancía segura", descripcion: "Aplican restricciones. Consulta términos y condiciones con tu agente." },
-    ],
+    "visible": true,
+    "titulo": "Ofertas de temporada",
+    "descripcion": "Promociones de octubre para tu seguro de auto. Toca una imagen para ver los beneficios y las condiciones completas.",
+    "imagenes": [
+      {
+        "imagen": "assets/ofertas/halloween-202610-resumen.webp",
+        "alt": "Promociones por aseguradora de octubre de 2026, con logos de JR Seguros, AARCO y las aseguradoras.",
+        "titulo": "Promociones por aseguradora",
+        "descripcion": "Válida del 1 al 31 de octubre de 2026. Aplican restricciones y condiciones de cada aseguradora. Consulta los detalles en la imagen."
+      },
+      {
+        "imagen": "assets/ofertas/halloween-202610-axa.webp",
+        "alt": "Promoción de auto con AXA de octubre de 2026, con logos de JR Seguros, AARCO y las aseguradoras.",
+        "titulo": "Promoción de auto con AXA",
+        "descripcion": "Válida del 1 al 31 de octubre de 2026. Aplican restricciones y condiciones de cada aseguradora. Consulta los detalles en la imagen."
+      },
+      {
+        "imagen": "assets/ofertas/halloween-202610-zurich.webp",
+        "alt": "Promoción de auto con Zurich de octubre de 2026, con logos de JR Seguros, AARCO y las aseguradoras.",
+        "titulo": "Promoción de auto con Zurich",
+        "descripcion": "Válida del 1 al 31 de octubre de 2026. Aplican restricciones y condiciones de cada aseguradora. Consulta los detalles en la imagen."
+      },
+      {
+        "imagen": "assets/ofertas/halloween-202610-hdi.webp",
+        "alt": "Promoción de auto con HDI de octubre de 2026, con logos de JR Seguros, AARCO y las aseguradoras.",
+        "titulo": "Promoción de auto con HDI",
+        "descripcion": "Válida del 1 al 31 de octubre de 2026. Aplican restricciones y condiciones de cada aseguradora. Consulta los detalles en la imagen."
+      },
+      {
+        "imagen": "assets/ofertas/halloween-202610-qualitas.webp",
+        "alt": "Promoción de auto con Quálitas de octubre de 2026, con logos de JR Seguros, AARCO y las aseguradoras.",
+        "titulo": "Promoción de auto con Quálitas",
+        "descripcion": "Válida del 1 al 31 de octubre de 2026. Aplican restricciones y condiciones de cada aseguradora. Consulta los detalles en la imagen."
+      },
+      {
+        "imagen": "assets/ofertas/halloween-202610-mapfre.webp",
+        "alt": "Promoción de auto con MAPFRE de octubre de 2026, con logos de JR Seguros, AARCO y las aseguradoras.",
+        "titulo": "Promoción de auto con MAPFRE",
+        "descripcion": "Válida del 1 al 31 de octubre de 2026. Aplican restricciones y condiciones de cada aseguradora. Consulta los detalles en la imagen."
+      },
+      {
+        "imagen": "assets/ofertas/halloween-202610-ana.webp",
+        "alt": "Promoción de auto con ANA Seguros de octubre de 2026, con logos de JR Seguros, AARCO y las aseguradoras.",
+        "titulo": "Promoción de auto con ANA Seguros",
+        "descripcion": "Válida del 1 al 31 de octubre de 2026. Aplican restricciones y condiciones de cada aseguradora. Consulta los detalles en la imagen."
+      }
+    ]
   },
   // Esta misma base alimenta las preguntas visibles y el chatbot local.
   preguntas: [
