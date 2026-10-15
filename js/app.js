@@ -5,6 +5,15 @@
   if (!data) return;
   const $ = (selector) => document.querySelector(selector);
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  if (location.hash === "#inicio") history.replaceState(null, "", "/");
+  document.querySelectorAll('a.brand[href="/"]').forEach((logo) => {
+    logo.addEventListener("click", (event) => {
+      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+      event.preventDefault();
+      history.replaceState(null, "", "/");
+      window.scrollTo({ top: 0, behavior: reducedMotion.matches ? "instant" : "smooth" });
+    });
+  });
   function animatePanel(element, opening) {
     element.getAnimations().forEach((animation) => animation.cancel());
     if (reducedMotion.matches || !element.animate) return Promise.resolve();
