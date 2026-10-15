@@ -114,9 +114,6 @@
       dialogFocus.get(dialog)?.focus({ preventScroll: true });
     });
   });
-  $("#privacy-open").addEventListener("click", () =>
-    openDialog($("#privacy-dialog")),
-  );
   function showPublication(entry, fallbackTitle, fallbackDescription = "", productId) {
     $("#publication-title").textContent = entry.titulo || fallbackTitle;
     $("#publication-image").src = entry.imagen;

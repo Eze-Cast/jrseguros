@@ -65,7 +65,9 @@
     <script src="js/asistente.js" defer></script>
     <script src="js/carruseles.js?v=temporada-202609" defer></script>
     <script src="js/aliados.js" defer></script>
-    <script src="js/app.js?v=temporada-202609" defer></script>
+    <script src="js/app.js?v=legal-20261015" defer></script>
+  <link rel="stylesheet" href="css/cookies.css" />
+    <script src="js/cookies.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -347,7 +349,7 @@
             target="_blank"
             rel="noopener noreferrer"
             >WhatsApp</a
-          ><button id="privacy-open">Privacidad</button>
+          ><a href="/aviso-legal.html">Aviso legal</a><a href="/privacidad.html">Privacidad</a><a href="/cookies.html">Cookies</a>
         </div>
       </div>
       <div class="container footer-bottom">
@@ -472,52 +474,12 @@
         >
       </div>
     </dialog>
-    <dialog
-      id="privacy-dialog"
-      class="privacy-dialog"
-      aria-labelledby="privacy-title"
-    >
-      <div class="dialog-bar">
-        <h2 id="privacy-title">Privacidad en este sitio</h2>
-        <button
-          class="icon-button"
-          data-close-dialog
-          aria-label="Cerrar privacidad"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="m6 6 12 12M18 6 6 18" />
-          </svg>
-        </button>
-      </div>
-      <div class="privacy-content">
-        <p>
-          Esta página no contiene formularios de registro ni solicita datos
-          personales para consultar las publicaciones.
-        </p>
-        <p>
-          El asistente procesa tus preguntas en tu navegador. La conversación no
-          se envía a un servicio de inteligencia artificial y se elimina al
-          recargar la página.
-        </p>
-        <p>
-          Al abrir WhatsApp o el cotizador visitarás un servicio externo, sujeto
-          a sus propios avisos de privacidad. El mensaje preparado para WhatsApp
-          solo se envía cuando tú lo confirmas dentro de esa aplicación.
-        </p>
-        <p>
-          El sitio no incorpora herramientas de analítica ni cookies de
-          publicidad. El proveedor de alojamiento puede registrar datos técnicos
-          de acceso. Para conocer el tratamiento de la información que entregues
-          durante una cotización, solicita el aviso de privacidad
-          correspondiente a tu asesor.
-        </p>
-      </div>
-    </dialog>
-    <noscript
+<noscript
       ><p class="noscript">
         Activa JavaScript para usar la galería interactiva y el asistente.
         Puedes cotizar y contactar por WhatsApp con los botones de esta página.
       </p></noscript
     >
+  <aside class="cookie-notice" id="cookie-notice" aria-label="Información sobre cookies" hidden><p><strong>Tu privacidad, con claridad.</strong>No usamos cookies publicitarias ni de analítica. Al cerrar este aviso, recordamos tu elección solo durante esta sesión de pestaña.</p><div class="cookie-actions"><a href="/cookies.html">Leer aviso de cookies</a><button type="button" id="cookie-dismiss">Entendido</button></div></aside>
   </body>
 </html>

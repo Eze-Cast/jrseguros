@@ -79,3 +79,6 @@
   padding: 16px 0;
   background: #081a2d;
 }
+
+.quote-legal { margin: 18px 0 0; text-align: center; font-size: .75rem; line-height: 1.8; }
+.quote-legal a { text-underline-offset: 3px; }

@@ -13,6 +13,9 @@ const mime = {
   ".svg": "image/svg+xml",
   ".webp": "image/webp",
   ".woff2": "font/woff2",
+  ".ico": "image/x-icon",
+  ".xml": "application/xml",
+  ".txt": "text/plain; charset=utf-8",
 };
 const server = http.createServer(async (req, res) => {
   try {
@@ -35,8 +38,8 @@ const server = http.createServer(async (req, res) => {
     });
     res.end(body);
   } catch {
-    res.writeHead(404);
-    res.end("Archivo no encontrado");
+    res.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
+    res.end(await fs.readFile(path.join(root, "404.html")));
   }
 });
 server.listen(4173, "127.0.0.1", () =>
