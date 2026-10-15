@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jrseguros.com.mx/sitemap.xml
