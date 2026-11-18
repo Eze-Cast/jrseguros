@@ -34,20 +34,35 @@
   <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/images/optimized/portada-patrimonio.webp" as="image" />
-  <link rel="stylesheet" href="css/estilo.css?v=rediseno-20261118" />
-  <script src="js/contenido.js?v=rediseno-20261118" defer></script>
-  <script src="js/conocimiento.js?v=rediseno-20261118" defer></script>
-  <script src="js/datos.js?v=rediseno-20261118" defer></script>
-  <script src="js/main.js?v=rediseno-20261118" defer></script>
+  <link rel="stylesheet" href="css/estilo.css?v=carga-20261118" />
+  <script src="js/contenido.js?v=carga-20261118" defer></script>
+  <script src="js/conocimiento.js?v=carga-20261118" defer></script>
+  <script src="js/datos.js?v=carga-20261118" defer></script>
+  <script src="js/main.js?v=carga-20261118" defer></script>
 </head>
 <body>
   <!-- Pantalla de entrada -->
   <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader-inner">
-      <img src="assets/images/optimized/logo-minimalista.webp" alt="" width="84" height="84" />
-      <p class="loader-word"><span>La</span> <span>tranquilidad</span> <span>de</span> <span>estar</span> <span>acompañado.</span></p>
+    <div class="ld-cols"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="ld-stage">
+      <div class="ld-orb">
+        <span class="ld-halo"></span>
+        <svg class="ld-ring" viewBox="0 0 120 120">
+          <defs><linearGradient id="ld-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6fcdf4" /><stop offset="1" stop-color="#1aa5e4" /></linearGradient></defs>
+          <circle class="ld-track" cx="60" cy="60" r="54" />
+          <circle class="ld-prog" id="ld-prog" cx="60" cy="60" r="54" />
+        </svg>
+        <span class="ld-spin" id="ld-spin"><i></i></span>
+        <span class="ld-wave"></span>
+        <img class="ld-logo" src="assets/images/optimized/logo-minimalista.webp" alt="" width="96" height="96" />
+      </div>
+      <p class="ld-brand"><span>J</span><span>R</span><span class="sp"></span><span>S</span><span>E</span><span>G</span><span>U</span><span>R</span><span>O</span><span>S</span></p>
+      <p class="ld-tag">La tranquilidad de estar acompañado.</p>
     </div>
-    <span class="loader-count" id="loader-count">0</span>
+    <div class="ld-foot">
+      <span class="ld-bar"><i id="ld-bar"></i></span>
+      <span class="ld-pct"><b id="loader-count">0</b>%</span>
+    </div>
   </div>
 
   <!-- Cursor suave (solo escritorio) -->

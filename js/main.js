@@ -27,32 +27,46 @@
   }
 
   /* ================= Entrada ================= */
-  const count = $("#loader-count");
-  let counted = false, pageLoaded = false, started = false;
+  // El progreso avanza solo hasta ~90 % y se completa cuando la portada y las
+  // fuentes están listas. El valor mostrado persigue al objetivo con suavizado.
+  const loader = $("#loader"), count = $("#loader-count"), ldProg = $("#ld-prog"), ldSpin = $("#ld-spin"), ldBar = $("#ld-bar");
+  const RING = 339.29, MIN_MS = 1500, MAX_MS = 4500;
+  // Siempre empezar arriba para que la entrada descubra la portada (salvo enlaces con #).
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (!location.hash) window.scrollTo(0, 0);
+  let pageLoaded = false, started = false, ldShown = 0;
+  const t0 = performance.now();
   const start = () => {
     if (started) return; started = true;
-    document.body.classList.add("loaded");
-    setTimeout(() => document.body.classList.add("ready"), reduce ? 0 : 450);
-    setTimeout(() => { const l = $("#loader"); l && l.remove(); }, 1600);
+    loader.classList.add("done");
+    setTimeout(() => {
+      document.body.classList.add("loaded");
+      setTimeout(() => document.body.classList.add("ready"), reduce ? 0 : 380);
+      setTimeout(() => loader.remove(), 1700);
+    }, reduce ? 0 : 420);
   };
-  const tryStart = () => counted && pageLoaded && start();
-  if (reduce) { counted = true; }
-  else {
-    const t0 = performance.now();
-    const step = (t) => {
-      const p = clamp((t - t0) / 1100, 0, 1);
-      count.textContent = Math.round((1 - Math.pow(1 - p, 3)) * 100);
-      if (p < 1) requestAnimationFrame(step); else { counted = true; tryStart(); }
-    };
-    requestAnimationFrame(step);
-  }
+  const ldLoop = (t) => {
+    const el = t - t0;
+    const auto = 90 * (1 - Math.exp(-el / 700));                   // avance natural
+    const target = pageLoaded && el > MIN_MS ? 100 : Math.min(auto, pageLoaded ? 99 : 90);
+    ldShown += (target - ldShown) * (target === 100 ? 0.12 : 0.08);
+    if (target === 100 && ldShown > 99.6) ldShown = 100;
+    const p = ldShown / 100;
+    count.textContent = Math.round(ldShown);
+    ldProg.style.strokeDashoffset = RING * (1 - p);
+    ldSpin.style.transform = `rotate(${p * 360}deg)`;
+    ldBar.style.transform = `scaleX(${p})`;
+    if (ldShown >= 100 || el > MAX_MS) start();
+    else requestAnimationFrame(ldLoop);
+  };
+  if (reduce) { start(); } else requestAnimationFrame(ldLoop);
   // No esperamos a todas las imágenes: basta con la portada y las fuentes.
   const heroImg = $(".hero-img");
   Promise.all([
     heroImg.decode ? heroImg.decode().catch(() => {}) : Promise.resolve(),
     document.fonts ? document.fonts.ready : Promise.resolve(),
-  ]).then(() => { pageLoaded = true; tryStart(); });
-  setTimeout(start, 3500);
+  ]).then(() => { pageLoaded = true; });
+  setTimeout(start, MAX_MS + 500);
 
   /* ================= Texto dividido ================= */
   $$("[data-split]").forEach((el) => {
