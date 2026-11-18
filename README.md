@@ -4,7 +4,8 @@ Sitio estático de JR Seguros, con catálogo de seguros, publicaciones y asisten
 
 - **Dominio configurado:** [jrseguros.com.mx](https://jrseguros.com.mx/).
 - **Publicación:** GitHub Pages, rama `main`, carpeta raíz (`/`).
-- **Contenido editable:** `js/contenido.js`.
+- **Contenido editable:** `js/contenido.js` (contacto, publicaciones, ofertas, preguntas y asistente) y `js/conocimiento.js` (respuestas extra del asistente).
+- **Diseño (noviembre 2026):** `index.html` y `cotizar.html` usan `css/estilo.css`, `js/datos.js` y `js/main.js`. En `js/datos.js` están las tarjetas de seguros, el selector de la portada y los logos de aseguradoras (`assets/logos/`). Las páginas legales y la 404 siguen usando `css/legal.css`.
 - **Guía del proyecto:** [LEEME.md](LEEME.md).
 - **Publicación y dominio:** [docs/PUBLICAR-EN-GITHUB.md](docs/PUBLICAR-EN-GITHUB.md).
 
